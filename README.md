@@ -355,7 +355,19 @@ BLASR is a read mapping program that maps reads to positions in a genome by clus
 
 __GenomicConsensus__
 
-GenomicConsensus is a library of code for performing alignment-guided _de novo_ consensus estimation. The alignment is used to draw windows over the input genome, in order to divide the problem into smaller more efficient chunks. These chunks are analyzed with an algorithm that leverages Partial Order Alignment to estimate an initial consensus. This initial consensus is then polished with a mutation proposal and acceptance procedure that uses the multiple per-base QV tracks produced by the instrument to parameterize a Needleman-Wunsch-esque global alignment scoring procedure.
+GenomicConsensus is a library of code for performing alignment-guided _de novo_ consensus estimation. The alignment is used to draw windows over the input genome, in order to divide the problem into smaller more efficient chunks. These chunks are then analyzed with either the plurality, Quiver, or Arrow algorithms, desribed below.
+
+___Plurality___
+
+The plurality algorithm uses a simple voting majority for each alignment column to estimate the consensus. This procedure is not strictly _de novo_, insofar that the template used for the underlying alignment conclusively determines the column space. However, where insertions or deletion variants are of no interest, plurality may be appropriate. 
+
+___Quiver___
+
+The Quiver algorithm estimates an initial consensus using a traceback procedure over a Partial Order Alignment (POA) (citation needed?) of the first few input reads (ordered by how much they span the window and then their overall length). This initial consensus is then polished using a Needlemen-Wunsch-like global string alignment scoring procedure, leveraging the QV tracks provided by the instrument to score each alignment move. Quiver requires a training for each specific chemistry, but with sufficient coverage can generate a final consensus estimation with fewer than 1 error in a million bases (>Q60).
+
+___Arrow___
+
+The Arrow algorithm is the next-generation Quiver algorithm, and also generates an intial consensus using the POA traceback procedure. The scoring procedure is disimilar from Quiver in that the initial template, along with the read per-channel Signal-to-Noise, is used to estimate a per-read profile-HMM which the read is threaded through to derive a likelihood score. Arrow has permitted circular consensus sequencing to avoid empirical accuracy plateaus as we observed with Quiver, due to its overall averaging of per-hole sequencing properties. We expect Arrow to replace Quiver as the default for the Resequencing workflow starting with Sequel.
 
 ## Glossary
 * __Chunk Cache?__
