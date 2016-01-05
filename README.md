@@ -33,7 +33,7 @@ can be in CMP.H5, SAM or BAM format. If output is BAM format, aligner can
 only be BLASR and QVs will be loaded automatically.
 
 * __variantCaller__
-  * variantCaller uses a user-specified algorithm from the GenomicConsensus tool to construct consensus sequences and a set of variants. 
+  * variantCaller uses a user-specified algorithm from the GenomicConsensus tool to construct consensus sequences and a set of variants. Input can be cmp.h5, aligned BAM, DataSet pointing to aligned BAM(s), or FOFN of aligned BAMs or cmp.h5s. Output will be a FASTA/FASTQ of consensus sequences, and a GFF of variants.
 
 ##Manual
 There are three ways to run Resequencing: Using SMRTLink, on the command line, and on the command line using pbsmrtpipe so that you can run the whole Resequencing analysis with one command given to pbsmrtpipe. 
