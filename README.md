@@ -203,7 +203,7 @@ In order to show variantCaller advanced options via command line: `variantCaller
 | parallelism | Number of Jobs |  -j NUMWORKERS, --numWorkers NUMWORKERS | The number of worker processes to be used (default: 1) |
 | output filtering | Minimum Confidence | --minConfidence MINCONFIDENCE, -q MINCONFIDENCE |  The minimum confidence for a variant call to be output to variants.gff (default: 40) |
 | output filtering | Minimum Coverage | --minCoverage MINCOVERAGE, -x MINCOVERAGE | The minimum site coverage that must be achieved for variant calls and consensus to be calculated for a site. (default: 5) |
-| output filtering | Help | --noEvidenceConsensusCall {nocall,reference,lowercasereference} | The consensus base that will be output for sites with no effective coverage. (default: lowercasereference) |
+| output filtering | Help | --noEvidenceConsensusCall reference | The consensus base that will be output for sites with no effective coverage. Possible values are nocall, reference, and lowercasereference. (default: lowercasereference) |
 | read selection and filtering | Coverage |  --coverage COVERAGE, -X COVERAGE | A designation of the maximum coverage level to be used for analysis. Exact interpretation is algorithm-specific. (default: 100) |
 | read selection and filtering | Minimum MapQV |  --minMapQV MINMAPQV, -m MINMAPQV |  The minimum MapQV for reads that will be used for analysis. (default: 10) |
 | read selection and filtering | Reference Window |  --referenceWindow REFERENCEWINDOWSASSTRING, --referenceWindows REFERENCEWINDOWSASSTRING, -w REFERENCEWINDOW | The window (or multiple comma-delimited windows) of the reference to be processed, in the format refGroup:refStart-refEnd (default: entire reference).(default: None) |
@@ -211,13 +211,13 @@ In order to show variantCaller advanced options via command line: `variantCaller
 | read selection and filtering | Reference Window File |  --referenceWindowsFile REFERENCEWINDOWSASSTRING, -W REFERENCEWINDOWSASSTRING |  A file containing reference window designations, one per line (default: None) |
 | read selection and filtering | Barcode | --barcode _BARCODE | Only process reads with the given barcode name. (default: None) |
 | read selection and filtering | Read Strata | --readStratum READSTRATUM |  A string of the form 'n/N', where n, and N are integers, 0 <= n < N, designating that the reads are to be deterministically split into N strata of roughly even size, and stratum n is to be used for variant and consensus calling. This is mostly useful for Quiver development. (default: None) |
-| algorithm and parameter settings | Algorithm |  --algorithm ALGORITHM | Specify variant calling algorithm {plurality; quiver; arrow} |
+| algorithm and parameter settings | Algorithm |  --algorithm ALGORITHM | Specify variant calling algorithm. Possible values are: plurality, quiver, and arrow. |
 | algorithm and parameter settings | Quiver Parameter File | --parametersFile PARAMETERSFILE, -P PARAMETERSFILE |  Parameter set filename (QuiverParameters.ini), or directory D such that either  D/*/GenomicConsensus/QuiverParameters.ini, or D/GenomicConsensus/QuiverParameters.ini, is found. In the former case, the lexically largest path is chosen. (default: None) |
 | algorithm and parameter settings | Parameter Specs | --parametersSpec PARAMETERSSPEC, -p PARAMETERSSPEC | Name of parameter set (chemistry.model) to select from the parameters file, or just the name of the chemistry, in which case the best available model is chosen. Default is 'auto', which selects the best parameter set from the cmp.h5 (default: auto) |
 | Verbosity and debugging and profiling | Verbosity Level | --verbose | Increase verbosity level of output for each additional occurence of the flag. None: Log only errors, Once: Log warnings and errors, Twice: Log all everything |
 | Verbosity and debugging and profiling | Quiet | --quiet | Turn off all logging, including warnings (default:False) |
 | Verbosity and debugging and profiling | Profile | --profile | Enable Python-level profiling (using cProfile).(default: False) |
-| Verbosity and debugging and profiling | Dump Evidence | --dumpEvidence [{variants,all}], -d [{variants,all}] | Dump fasta and H5 files used to infer consensus calls for each window that variantCaller operates on |
+| Verbosity and debugging and profiling | Dump Evidence | --dumpEvidence [variants], -d [variants] | Dump fasta and H5 files used to infer consensus calls for each window that variantCaller operates on. Possible values are variants, and all. |
 | Verbosity and debugging and profiling | Evidence Directory | --evidenceDirectory EVIDENCEDIRECTORY | Directory to dump fasta and H5 data files to. Default:evidence_dump |
 | Verbosity and debugging and profiling | Annotate GFF | --annotateGFF | Augment GFF variant records with additional information (default: False) |
 | Advanced configuration | Diploid | diploid | Enable detection of heterozygous variants (experimental) (default: False) |
@@ -228,7 +228,7 @@ In order to show variantCaller advanced options via command line: `variantCaller
 | Advanced configuration | Simple Chunking | --simpleChunking | Disable adaptive reference chunking (default: True) |
 | Advanced configuration | Reference Chunk Overlap | --referenceChunkOverlap REFERENCECHUNKOVERLAP | The number of overlapping bases on each side of a chunk, for the purposes of later stitching of chunks (default: 5) |
 | Advanced configuration | Auto-Disable Hdf5 Chunk Cache | --autoDisableHdf5ChunkCache AUTODISABLEHDF5CHUNKCACHE | Disable the HDF5 chunk cache when the number of datasets in the cmp.h5 exceeds the given threshold (default: 500) |
-| Advanced configuration | Aligner | --aligner {affine,simple}, -a {affine,simple} | The pairwise alignment algorithm that will be used to produce variant calls from the consensus (Quiver only). (default: affine) |
+| Advanced configuration | Aligner | --aligner affine, -a affine | The pairwise alignment algorithm that will be used to produce variant calls from the consensus (Quiver only). Possible values are affine and simple. (default: affine) |
 | Advanced configuration | Refine Dinucleotide Repeats | --refineDinucleotideRepeats | Require quiver maximum likelihood search to try one less/more repeat copy in dinucleotide repeats, which seem to be the most frequent cause of suboptimal convergence (getting trapped in local optimum) (Quiver only) (default: True) |
 | Advanced configuration | No Refine Dinucleotide Repeats | --noRefineDinucleotideRepeats | Disable dinucleotide refinement (default: True) |
 | Advanced configuration | Fast | --fast | Cut some corners to run faster. Unsupported! (default: False) |
