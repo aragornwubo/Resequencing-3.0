@@ -154,13 +154,13 @@ You may modify advanced analysis parameters for Resequencing as described below 
 
 | Type  |  Parameter          |     Example      |  Explanation      |
 | ----- | ------------------ | ---------------- | ----------------- |
-| positional | Input File |  unaligned.bam | SubreadSet or unaligned .bam |
-| positional | Reference File |  reference.fasta | Reference DataSet or FASTA file |
+| positional | Input File |  unaligned.bam | SubreadSet XML or unaligned BAM |
+| positional | Reference File |  reference.fasta | Reference DataSet XML or FASTA |
 | positional | Output File |  aligned.bam | Output AlignmentSet file |
-| optional | Help | -h, --help | show this help message and exit |
-| optional | Version | -v, --version | show program's version number and exit |
-| optional | Verbose | --verbose | Turn on verbose logging output |
-| optional | Debug | --debug | Writes the debug reporting to stdout |
+| optional | Help | -h, --help | Shows program's help message and exits. |
+| optional | Version | -v, --version | Shows program's version number and exits. |
+| optional | Verbose | --verbose | Turn on verbose logging output. |
+| optional | Debug | --debug | Writes the debug reporting to stdout. |
 | optional | Profile | --profile | Print runtime profile at exit |
 | optional input | Region Table | --regionTable REGIONTABLE | Specify a region table for filtering reads. |
 | optional input | Configuration File | --configFile CONFIGFILE | Specify a set of user-defined argument values. |
