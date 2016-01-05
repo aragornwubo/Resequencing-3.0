@@ -370,7 +370,7 @@ ___Arrow___
 The Arrow algorithm is the next-generation Quiver algorithm, and also generates an intial consensus using the POA traceback procedure. The scoring procedure is disimilar from Quiver in that the initial template, along with the read per-channel Signal-to-Noise, is used to estimate a per-read profile-HMM which the read is threaded through to derive a likelihood score. Arrow has permitted circular consensus sequencing to avoid empirical accuracy plateaus as we observed with Quiver, due to its overall averaging of per-hole sequencing properties. We expect Arrow to replace Quiver as the default for the Resequencing workflow starting with Sequel.
 
 ## Glossary
-* __Chunk Cache?__
+* __Chunk Cache__
   * An internal detail to HDF5 file-handling, used to accelerate access to h5 files.
 * __Confidence (variant call)__
   * A PHRED-scaled value indicating the likelihood the variant was called in error.
