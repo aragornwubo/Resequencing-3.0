@@ -217,7 +217,7 @@ In order to show variantCaller advanced options via command line: `variantCaller
 | Verbosity and debugging and profiling | Verbosity Level | --verbose | Increase verbosity level of output for each additional occurence of the flag. None: Log only errors, Once: Log warnings and errors, Twice: Log all everything |
 | Verbosity and debugging and profiling | Quiet | --quiet | Turn off all logging, including warnings (default:False) |
 | Verbosity and debugging and profiling | Profile | --profile | Enable Python-level profiling (using cProfile).(default: False) |
-| Verbosity and debugging and profiling | Dump Evidence | --dumpEvidence [variants], -d [variants] | Dump fasta and H5 files used to infer consensus calls for each window that variantCaller operates on. Possible values are variants, and all. |
+| Verbosity and debugging and profiling | Dump Evidence | --dumpEvidence variants, -d variants | Dump fasta and H5 files used to infer consensus calls for each window that variantCaller operates on. Possible values are variants, and all. |
 | Verbosity and debugging and profiling | Evidence Directory | --evidenceDirectory EVIDENCEDIRECTORY | Directory to dump fasta and H5 data files to. Default:evidence_dump |
 | Verbosity and debugging and profiling | Annotate GFF | --annotateGFF | Augment GFF variant records with additional information (default: False) |
 | Advanced configuration | Diploid | diploid | Enable detection of heterozygous variants (experimental) (default: False) |
