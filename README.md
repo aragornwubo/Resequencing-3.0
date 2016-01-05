@@ -197,7 +197,7 @@ In order to show variantCaller advanced options via command line: `variantCaller
 | optional | Resolved Tool Contract | --resolved-tool-contract RESOLVED_TOOL_CONTRACT | Run Tool directly from a PacBio Resolved tool contract (default: None) |
 | optional | Log Level |  --log-level {DEBUG, INFO, WARNING, ERROR, CRITICAL} | Set log level (default: INFO) |
 | optional | Debug Mode |  --debug | Debug to stdout (default: False) |
-| basic required | Input File |  inputFilename |  The input FASTA/BAM/XML file (revised) |
+| basic required | Input File |  inputFilename |  The input sequence data. Valid inputs are cmp.h5, aligned BAM, DataSet pointing to aligned BAM(s), or FOFN of aligned BAMs or cmp.h5s |
 | basic required | Reference File |   --referenceFilename REFERENCEFILENAME, --reference REFERENCEFILENAME, -r REFERENCEFILENAME | The filename of the reference FASTA file (default:None) |
 | basic required | Output File |   -o OUTPUTFILENAMES, --outputFilename OUTPUTFILENAMES |  The output filename(s), as a comma-separated list.Valid output formats are .fa/.fasta, .fq/.fastq,.gff (default: []) |
 | parallelism | Number of Jobs |  -j NUMWORKERS, --numWorkers NUMWORKERS | The number of worker processes to be used (default: 1) |
