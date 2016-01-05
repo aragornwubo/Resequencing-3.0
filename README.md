@@ -165,10 +165,10 @@ You may modify advanced analysis parameters for Resequencing as described below 
 | optional input | Region Table | --regionTable REGIONTABLE | Specify a region table for filtering reads. |
 | optional input | Configuration File | --configFile CONFIGFILE | Specify a set of user-defined argument values. |
 | optional input | Pulse File | --pulseFile PULSEFILE | When input reads are in fasta format and output is a cmp.h5 this option can specify pls.h5 or bas.h5 or FOFN files from which pulse metrics can be loaded for Quiver. |
-| alignment | Algorithm | --algorithm {blasr, bowtie, gmap} | Select an aligorithm from ('blasr', 'bowtie', 'gmap'). Default algorithm is blasr. |
+| alignment | Algorithm | --algorithm blasr | Select an aligorithm from ('blasr', 'bowtie', 'gmap'). Default algorithm is blasr. |
 | alignment | Maximum Hits | --maxHits MAXHITS | The maximum number of matches of each read to the reference sequence that will be evaluated. Default value is 10. |
 | alignment | Minimum Anchor Size | --minAnchorSize MINANCHORSIZE | The minimum anchor size defines the length of the read that must match against the reference sequence. Default value is 12. |
-| alignment | Use CCS | --useccs {useccs, useccsall, useccsdenovo} | Map the ccsSequence to the genome first, then align subreads to the interval that the CCS reads mapped to. useccs: only maps subreads that span the length of the template. useccsall: maps all subreads. useccsdenovo: maps ccs only. |
+| alignment | Use CCS | --useccs useccsdenovo | Map the ccsSequence to the genome first, then align subreads to the interval that the CCS reads mapped to. useccs: only maps subreads that span the length of the template. useccsall: maps all subreads. useccsdenovo: maps ccs only. |
 | alignment | No Split Subreads | --noSplitSubreads | Do not split reads into subreads even if subread regions are available. Default value is False. |
 | alignment | Concordant | --concordant | Map subreads of a ZMW to the same genomic location. |
 | alignment | Number of Threads | --nproc NPROC | Number of threads. Default value is 8. |
@@ -195,7 +195,7 @@ In order to show variantCaller advanced options via command line: `variantCaller
 | optional | Version |  -v, --version |  show program's version number and exit |
 | optional | Emit Tool Contract |   --emit-tool-contract |  Emit Tool Contract to stdout (default: False) |
 | optional | Resolved Tool Contract | --resolved-tool-contract RESOLVED_TOOL_CONTRACT | Run Tool directly from a PacBio Resolved tool contract (default: None) |
-| optional | Log Level |  --log-level {DEBUG, INFO, WARNING, ERROR, CRITICAL} | Set log level (default: INFO) |
+| optional | Log Level |  --log-level WARNING | Set log level. Possible levels are: DEBUG, INFO, WARNING, ERROR, CRITICAL (default: INFO) |
 | optional | Debug Mode |  --debug | Debug to stdout (default: False) |
 | basic required | Input File |  inputFilename |  The input sequence data. Valid inputs are cmp.h5, aligned BAM, DataSet pointing to aligned BAM(s), or FOFN of aligned BAMs or cmp.h5s |
 | basic required | Reference File |   --referenceFilename REFERENCEFILENAME, --reference REFERENCEFILENAME, -r REFERENCEFILENAME | The filename of the reference FASTA file (default:None) |
