@@ -138,12 +138,12 @@ You may modify advanced analysis parameters for Resequencing as described below 
 | Module |           Parameter (pbsmrtpipe_name)          |     Default      |  Explanation      |
 | ------ | -------------------------- | --------------------------- | ----------------- |
 | variantCaller | Algorithm Name (algorithm) | quiver  | Specifies the algorithm to be used by GenomicConsenus. Options are "quiver" and "plurality" |
-| variantCaller | Diploid mode (diploid)  | unchecked  | Enable detection of heterozygous variants (experimental) |
+| variantCaller | Diploid mode (diploid)  | False  | Enable detection of heterozygous variants (experimental) |
 | variantCaller | Minimum confidence (min_confidence) | 40  | The minimum confidence for a variant call to be output to variants.gff |
 | variantCaller | Minimum coverage (min_coverage) | 5  | The minimum site coverage that must be achieved for variant calls and consensus to be calculated for a site. |
 | PBAlign | Algorithm options (algorithm_options) | -minMatch 12 -bestn 10 -minPctIdentity 70.0  | List of space-separated arguments passed to BLASR |
-| PBAlign | Concordant alignment (concordant) | checked  | Map subreads of a ZMW to the same genomic location |
-| PBAlign | Consolidate .bam (consolidate_aligned_bam) | unchecked  | Merge chunked/gathered .bam files |
+| PBAlign | Concordant alignment (concordant) | True  | Map subreads of a ZMW to the same genomic location |
+| PBAlign | Consolidate .bam (consolidate_aligned_bam) | False  | Merge chunked/gathered .bam files |
 | PBAlign | Number of .bam files (consolidate_n_files) | 1  | Number of .bam files to create in consolidate mode |
 | variantCaller | Hit policy (hit_policy) | 40  | Specify a policy for how to treat multiple hit random : selects a random hit. all : selects all hits. allbest : selects all the best score hits. randombest: selects a random hit from all best score hits. leftmost : selects a hit which has the best score and the smallest mapping coordinate in any reference. Default value is randombest. |
 | variantCaller | Min. accuracy (min_accuracy)  | 70  | Minimum required alignment accuracy (percent) |
