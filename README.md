@@ -184,7 +184,7 @@ You may modify advanced analysis parameters for Resequencing as described below 
 | for cmp.h5 | By Read | --byread | Load pulse information using -byread option instead of -bymetric. Only works when --forQuiver or --loadQVs are set. Default value is False. |
 | for cmp.h5 | Metrics | --metrics METRICS | Load the specified (comma-delimited list of) metrics instead of the default metrics required by quiver. This option only works when --forQuiver  or --loadQVs are set. Default: DeletionQV, DeletionTag, InsertionQV, MergeQV, SubstitutionQV |
 | miscellaneous | Seed | --seed 1 | Initialize the random number generator with a none-zero integer. Zero means that current system time is used. Default value is 1. |
-| miscellaneous | Temporary Directory | --tmpDir TMPDIR | Specify a directory for saving temporary files. Default is /scratch. |
+| miscellaneous | Temporary Directory | --tmpDir /scratch | Specify a directory for saving temporary files. Default is /scratch. |
 
 ### variantCaller Options
 In order to show variantCaller advanced options via command line: `variantCaller --help`.
