@@ -191,17 +191,17 @@ In order to show variantCaller advanced options via command line: `variantCaller
 
 | Type  |  Parameter          |     Example      |  Explanation      |
 | ----- | ------------------ | ---------------- | ----------------- |
-| optional | Help |  -h, --help | show this help message and exit |
-| optional | Version |  -v, --version |  show program's version number and exit |
-| optional | Emit Tool Contract |   --emit-tool-contract |  Emit Tool Contract to stdout (default: False) |
+| optional | Help |  -h, --help | Show this help message and exit. |
+| optional | Version |  -v, --version |  Show program's version number and exit. |
+| optional | Emit Tool Contract |   --emit-tool-contract |  Emit Tool Contract to stdout. |
 | optional | Resolved Tool Contract | --resolved-tool-contract RESOLVED_TOOL_CONTRACT | Run Tool directly from a PacBio Resolved tool contract (default: None) |
 | optional | Log Level |  --log-level WARNING | Set log level. Possible levels are: DEBUG, INFO, WARNING, ERROR, CRITICAL (default: INFO) |
-| optional | Debug Mode |  --debug | Debug to stdout (default: False) |
-| basic required | Input File |  inputFilename |  The input sequence data. Valid inputs are cmp.h5, aligned BAM, DataSet pointing to aligned BAM(s), or FOFN of aligned BAMs or cmp.h5s |
-| basic required | Reference File |   --referenceFilename REFERENCEFILENAME, --reference REFERENCEFILENAME, -r REFERENCEFILENAME | The filename of the reference FASTA file (default:None) |
-| basic required | Output File |   -o OUTPUTFILENAMES, --outputFilename OUTPUTFILENAMES |  The output filename(s), as a comma-separated list.Valid output formats are .fa/.fasta, .fq/.fastq,.gff (default: []) |
-| parallelism | Number of Jobs |  -j NUMWORKERS, --numWorkers NUMWORKERS | The number of worker processes to be used (default: 1) |
-| output filtering | Minimum Confidence | --minConfidence MINCONFIDENCE, -q MINCONFIDENCE |  The minimum confidence for a variant call to be output to variants.gff (default: 40) |
+| optional | Debug Mode |  --debug | Debug to stdout. |
+| basic required | Input File |  inputFilename |  The input sequence data. Valid inputs are cmp.h5, aligned BAM, DataSet pointing to aligned BAM(s), or FOFN of aligned BAMs or cmp.h5s. |
+| basic required | Reference File |   --referenceFilename REFERENCEFILENAME, --reference REFERENCEFILENAME, -r REFERENCEFILENAME | The filename of the reference FASTA file. (default:None) |
+| basic required | Output File |   -o OUTPUTFILENAMES, --outputFilename OUTPUTFILENAMES |  The output filename(s), as a comma-separated list. Valid output formats are .fa/.fasta, .fq/.fastq,.gff (default: []) |
+| parallelism | Number of Jobs |  -j NUMWORKERS, --numWorkers NUMWORKERS | The number of worker processes to be used. (default: 1) |
+| output filtering | Minimum Confidence | --minConfidence MINCONFIDENCE, -q MINCONFIDENCE |  The minimum confidence for a variant call to be output to variants.gff. (default: 40) |
 | output filtering | Minimum Coverage | --minCoverage MINCOVERAGE, -x MINCOVERAGE | The minimum site coverage that must be achieved for variant calls and consensus to be calculated for a site. (default: 5) |
 | output filtering | Help | --noEvidenceConsensusCall reference | The consensus base that will be output for sites with no effective coverage. Possible values are nocall, reference, and lowercasereference. (default: lowercasereference) |
 | read selection and filtering | Coverage |  --coverage COVERAGE, -X COVERAGE | A designation of the maximum coverage level to be used for analysis. Exact interpretation is algorithm-specific. (default: 100) |
@@ -214,20 +214,20 @@ In order to show variantCaller advanced options via command line: `variantCaller
 | algorithm and parameter settings | Algorithm |  --algorithm ALGORITHM | Specify variant calling algorithm. Possible values are: plurality, quiver, and arrow. |
 | algorithm and parameter settings | Quiver Parameter File | --parametersFile PARAMETERSFILE, -P PARAMETERSFILE |  Parameter set filename (QuiverParameters.ini), or directory D such that either  D/*/GenomicConsensus/QuiverParameters.ini, or D/GenomicConsensus/QuiverParameters.ini, is found. In the former case, the lexically largest path is chosen. (default: None) |
 | algorithm and parameter settings | Parameter Specs | --parametersSpec PARAMETERSSPEC, -p PARAMETERSSPEC | Name of parameter set (chemistry.model) to select from the parameters file, or just the name of the chemistry, in which case the best available model is chosen. Default is 'auto', which selects the best parameter set from the cmp.h5 (default: auto) |
-| Verbosity and debugging and profiling | Verbosity Level | --verbose | Increase verbosity level of output for each additional occurence of the flag. None: Log only errors, Once: Log warnings and errors, Twice: Log all everything |
-| Verbosity and debugging and profiling | Quiet | --quiet | Turn off all logging, including warnings (default:False) |
-| Verbosity and debugging and profiling | Profile | --profile | Enable Python-level profiling (using cProfile).(default: False) |
-| Verbosity and debugging and profiling | Dump Evidence | --dumpEvidence variants, -d variants | Dump fasta and H5 files used to infer consensus calls for each window that variantCaller operates on. Possible values are variants, and all. |
-| Verbosity and debugging and profiling | Evidence Directory | --evidenceDirectory EVIDENCEDIRECTORY | Directory to dump fasta and H5 data files to. Default:evidence_dump |
-| Verbosity and debugging and profiling | Annotate GFF | --annotateGFF | Augment GFF variant records with additional information (default: False) |
+| Verbosity and debugging and profiling | Verbosity Level | --verbose | Increase verbosity level of output for each additional occurence of the flag. None: Log only errors, Once: Log warnings and errors, Twice: Log everything |
+| Verbosity and debugging and profiling | Quiet | --quiet | Turn off all logging, including warnings. (default: False) |
+| Verbosity and debugging and profiling | Profile | --profile | Enable Python-level profiling (using cProfile). (default: False) |
+| Verbosity and debugging and profiling | Dump Evidence | --dumpEvidence variants, -d variants | Dump FASTA and H5 files used to infer consensus calls for each window that variantCaller operates on. Possible values are variants, and all. |
+| Verbosity and debugging and profiling | Evidence Directory | --evidenceDirectory EVIDENCEDIRECTORY | Directory to dump fasta and H5 data files to. (default: evidence_dump) |
+| Verbosity and debugging and profiling | Annotate GFF | --annotateGFF | Augment GFF variant records with additional information. (default: False) |
 | Advanced configuration | Diploid | diploid | Enable detection of heterozygous variants (experimental) (default: False) |
 | Advanced configuration | Queue Size | --queueSize QUEUESIZE, -Q QUEUESIZE | The maximum number of chunks to prepare for analysis (default: 200) |
 | Advanced configuration | Thread | --threaded, -T | Run threads instead of processes (for debugging purposes only) (default: False) |
 | Advanced configuration | Reference Chunk Size | --referenceChunkSize REFERENCECHUNKSIZE, -C REFERENCECHUNKSIZE | The size of each chunk as defined by the number of bases spanned in the reference (default: 500) |
-| Advanced configuration | Fancy Chunking | --fancyChunking | Adaptive reference chunking designed to handle coverage cutouts better (default: True) |
-| Advanced configuration | Simple Chunking | --simpleChunking | Disable adaptive reference chunking (default: True) |
-| Advanced configuration | Reference Chunk Overlap | --referenceChunkOverlap REFERENCECHUNKOVERLAP | The number of overlapping bases on each side of a chunk, for the purposes of later stitching of chunks (default: 5) |
-| Advanced configuration | Auto-Disable Hdf5 Chunk Cache | --autoDisableHdf5ChunkCache AUTODISABLEHDF5CHUNKCACHE | Disable the HDF5 chunk cache when the number of datasets in the cmp.h5 exceeds the given threshold (default: 500) |
+| Advanced configuration | Fancy Chunking | --fancyChunking | Adaptive reference chunking designed to handle coverage cutouts better. (default: True) |
+| Advanced configuration | Simple Chunking | --simpleChunking | Disable adaptive reference chunking. (default: True) |
+| Advanced configuration | Reference Chunk Overlap | --referenceChunkOverlap REFERENCECHUNKOVERLAP | The number of overlapping bases on each side of a chunk, for the purposes of later stitching of chunks. (default: 5) |
+| Advanced configuration | Auto-Disable Hdf5 Chunk Cache | --autoDisableHdf5ChunkCache AUTODISABLEHDF5CHUNKCACHE | Disable the HDF5 chunk cache when the number of datasets in the cmp.h5 exceeds the given threshold. (default: 500) |
 | Advanced configuration | Aligner | --aligner affine, -a affine | The pairwise alignment algorithm that will be used to produce variant calls from the consensus (Quiver only). Possible values are affine and simple. (default: affine) |
 | Advanced configuration | Refine Dinucleotide Repeats | --refineDinucleotideRepeats | Require quiver maximum likelihood search to try one less/more repeat copy in dinucleotide repeats, which seem to be the most frequent cause of suboptimal convergence (getting trapped in local optimum) (Quiver only) (default: True) |
 | Advanced configuration | No Refine Dinucleotide Repeats | --noRefineDinucleotideRepeats | Disable dinucleotide refinement (default: True) |
