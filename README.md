@@ -355,7 +355,7 @@ BLASR is a read mapping program that maps reads to positions in a genome by clus
 
 __GenomicConsensus__
 
-GenomicConsensus is a library of code for performing alignment-guided _de novo_ consensus estimation. The alignment is used to draw windows over the input genome, in order to divide the problem into smaller more efficient chunks. These chunks are then analyzed with either the plurality, Quiver, or Arrow algorithms, desribed below.
+GenomicConsensus is a library of code for performing alignment-guided _de novo_ consensus estimation. The alignment is used to draw windows over the input genome, in order to divide the problem into smaller more efficient chunks. These chunks are then analyzed with either the plurality, Quiver, or Arrow algorithms, described below.
 
 ___Plurality___
 
