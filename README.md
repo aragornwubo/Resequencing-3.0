@@ -89,13 +89,21 @@ You can verify that pbsmrtpipe is running OK by:
 
     pbsmrtpipe --help
 
-#### Create a dataset
+#### Create datasets
 Now create an XML file from your subreads.
 
 ```
 dataset create --type SubreadSet --generateIndices my.subreadset.xml subreads1.bam subreads2.bam ...
 ```
 This will create a file called `my.subreadset.xml`. 
+
+And create an XML file for your reference.
+
+```
+dataset create --type ReferenceSet my.referenceset.xml reference.fasta
+```
+This will create a file called `my.referenceset.xml`. 
+
 
 
 #### Create and edit resequencing options and global options for `pbsmrtpipe`.
@@ -126,7 +134,7 @@ And you can modify options using your favorite text editor, such as vim.
 Once you have set your options, you are ready to run resequencing via pbsmrtpipe:
 
 ```
-pbsmrtpipe pipeline-id pbsmrtpipe.pipelines.sa3_ds_resequencing -e eid_ref_dataset:reference.fasta -e eid_subread:my.subreadset.xml --preset-xml=resequencing_options.xml --preset-xml=global_options.xml
+pbsmrtpipe pipeline-id pbsmrtpipe.pipelines.sa3_ds_resequencing -e eid_ref_dataset:my.referenceset.xml -e eid_subread:my.subreadset.xml --preset-xml=resequencing_options.xml --preset-xml=global_options.xml
 ```
 
 ## Advanced Analysis Options
