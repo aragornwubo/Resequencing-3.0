@@ -71,9 +71,9 @@ Where `reference.fasta` contains your reference sequences.
 
 Where `aligned_subreads.bam` contains your aligned reads.
 
-Where `consensus.fastq` the filename to output your consensus sequences in fasta format
+Where `consensus.fastq` the filename to output your consensus sequences in fasta format.
 
-Where `variants.gff` contains your variant callset output
+Where `variants.gff` contains your variant callset output.
 
 **Note:** You will need to have an index file for your `reference.fasta`. 
 
