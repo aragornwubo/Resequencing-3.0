@@ -93,7 +93,7 @@ You can verify that pbsmrtpipe is running OK by:
 Now create an XML file from your subreads.
 
 ```
-dataset create --type SubreadSet --generateIndices my.subreadset.xml subreads1.bam subreads2.bam ...
+dataset create --generateIndices --type SubreadSet --generateIndices my.subreadset.xml subreads1.bam subreads2.bam ...
 ```
 This will create a file called `my.subreadset.xml`. 
 
