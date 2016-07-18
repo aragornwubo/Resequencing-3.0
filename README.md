@@ -267,7 +267,7 @@ Example config text file:
 # Note that:
 #   [1] Positional arguments, including inputFileName, outputFileName,
 #       and referencePath, can not be specified in a config file.
-#   [2] Sepcial arguments, including --verbose, --version (-v..),
+#   [2] Special arguments, including --verbose, --version (-v..),
 #       --debug and --profile, in a config file will be ignored.
 #   [3] Arguments specified in a config file will be overwritten
 #       by arguments on command-line.
